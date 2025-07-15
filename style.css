@@ -294,8 +294,9 @@ body {
     align-items: center;
     max-width: 1200px;
     width: 100%;
-    padding: 0 20px;
+    padding: 0 20px; /* Padding padrão para desktop */
     gap: 40px;
+    box-sizing: border-box; /* Garante que o padding não aumente a largura total */
 }
 
 .about-text {
@@ -345,7 +346,7 @@ body {
 
 /* --- Estilos para Outras Seções (Cultos, Eventos, Contato) --- */
 .section-padding {
-    padding: 100px 20px;
+    padding: 100px 20px; /* Padding padrão de 20px nas laterais */
     min-height: 60vh;
     display: flex;
     flex-direction: column;
@@ -839,6 +840,8 @@ body {
     .about-content {
         flex-direction: column;
         gap: 30px;
+        /* Adiciona padding horizontal para telas menores */
+        padding: 0 15px; /* Adicionado para garantir o espaçamento nas laterais */
     }
 
     .about-text {
@@ -929,10 +932,6 @@ body {
         height: 40px;
         /* margin-bottom: 8px; Removido */
     }
-
-    /* .navbar nav ul li { removido, pois .main-nav já está display: none */
-        /* margin: 8px 0; */
-    /* } */
 
     .section-padding {
         padding: 60px 15px;
