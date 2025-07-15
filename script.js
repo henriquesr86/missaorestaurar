@@ -48,10 +48,10 @@ document.addEventListener('DOMContentLoaded', function() {
             if (entry.isIntersecting) {
                 // Se o elemento está na viewport, adiciona a classe para animar
                 entry.target.classList.add('is-visible');
-                // Opcional: Para que a animação ocorra apenas uma vez, descomente a linha abaixo
+                // Para que a animação ocorra apenas uma vez, descomente a linha abaixo
                 // observer.unobserve(entry.target);
             } else {
-                // Opcional: Se quiser que a animação se repita ao rolar para cima e para baixo
+                // Se quiser que a animação se repita ao rolar para cima e para baixo
                 // entry.target.classList.remove('is-visible');
             }
         });
@@ -61,4 +61,42 @@ document.addEventListener('DOMContentLoaded', function() {
     fadeInElements.forEach(element => {
         observer.observe(element);
     });
+
+    // --- 3. Script para o Hamburguer Menu e Sidebar (Adicionado e Ajustado) ---
+
+    // Seleciona os elementos do DOM
+    const hamburgerMenu = document.getElementById('hamburger-menu');
+    const sidebarMenu = document.getElementById('sidebar-menu');
+    const closeSidebarBtn = document.getElementById('close-sidebar');
+    const sidebarNavLinks = document.querySelectorAll('.sidebar-nav-links a'); // Seleciona todos os links dentro do menu lateral
+
+    // Adiciona um 'listener' de evento de clique para o ícone do hambúrguer
+    hamburgerMenu.addEventListener('click', function() {
+        sidebarMenu.classList.add('open'); // Adiciona a classe 'open' para mostrar o menu
+    });
+
+    // Adiciona um 'listener' de evento de clique para o botão de fechar (o 'X') no menu lateral
+    closeSidebarBtn.addEventListener('click', function() {
+        sidebarMenu.classList.remove('open'); // Remove a classe 'open' para esconder o menu
+    });
+
+    // Adiciona um 'listener' de evento de clique para cada link dentro do menu lateral
+    // Isso garante que o menu lateral feche automaticamente quando um link for clicado
+    sidebarNavLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            sidebarMenu.classList.remove('open');
+        });
+    });
+
+    // Adiciona um 'listener' para fechar o menu lateral ao clicar em qualquer lugar FORA dele
+    document.addEventListener('click', function(event) {
+        // Verifica se o clique não foi dentro do sidebar ou no hamburguer
+        // e se o menu está aberto
+        if (!sidebarMenu.contains(event.target) && !hamburgerMenu.contains(event.target) && sidebarMenu.classList.contains('open')) {
+            sidebarMenu.classList.remove('open');
+        }
+    });
+
+    // --- 4. Script para atualizar o ano no rodapé (Mantido) ---
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
 });

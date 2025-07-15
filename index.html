@@ -16,8 +16,8 @@
             <div class="logo-container">
                 <img src="logo.png" alt="Logo Missão Restaurar">
             </div>
-            <nav>
-                <ul>
+            <nav class="main-nav">
+                <ul class="nav-links">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#sobre">Sobre</a></li>
                     <li><a href="#eventos">Eventos</a></li>
@@ -25,13 +25,27 @@
                     <li><a href="#contato-form">Contato</a></li>
                 </ul>
             </nav>
+            <div class="hamburger-menu" id="hamburger-menu">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
         </div>
     </header>
 
+    <div class="sidebar-menu" id="sidebar-menu">
+        <div class="close-btn" id="close-sidebar">&times;</div> <ul class="sidebar-nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#eventos">Eventos</a></li>
+            <li><a href="#cultos">Cultos</a></li>
+            <li><a href="#contato-form">Contato</a></li>
+        </ul>
+    </div>
+
     <section id="home" class="hero">
         <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <h1>Missão Restaurar: Um Lugar para Pertencer</h1>
+        <div class="hero-content fade-in-element"> <h1>Missão Restaurar: Um Lugar para Pertencer</h1>
             <p>Juntos, construindo a fé e transformando vidas.</p>
         </div>
     </section>
@@ -56,18 +70,15 @@
         <h2 class="section-title-fixed-dark">Nossos Eventos: Agenda de Oportunidades</h2>
         <p>Participe dos nossos próximos eventos e fortaleça sua fé. Temos algo especial esperando por você!</p>
         <div class="event-grid">
-            <div class="event-card event-card-dark">
-                <h3>Estudo Bíblico Semanal</h3>
+            <div class="event-card event-card-dark fade-in-element"> <h3>Estudo Bíblico Semanal</h3>
                 <p>Toda Quarta-feira, 19:30h</p>
                 <p>Aprofunde-se na Palavra de Deus conosco.</p>
             </div>
-            <div class="event-card event-card-dark">
-                <h3>Noite de Louvor e Adoração</h3>
+            <div class="event-card event-card-dark fade-in-element"> <h3>Noite de Louvor e Adoração</h3>
                 <p>Última Sexta-feira do Mês, 20:00h</p>
                 <p>Um tempo de entrega e celebração.</p>
             </div>
-            <div class="event-card event-card-dark">
-                <h3>Ação Social Comunitária</h3>
+            <div class="event-card event-card-dark fade-in-element"> <h3>Ação Social Comunitária</h3>
                 <p>Primeiro Sábado do Mês, 09:00h</p>
                 <p>Estenda a mão e faça a diferença na vida de alguém.</p>
             </div>
@@ -77,8 +88,7 @@
     <section id="cultos" class="section-padding fade-in-element">
         <h2 class="section-title-fixed">Nossos Cultos: Participe e Conecte-se</h2>
         <p>Junte-se a nós em nossos cultos e experimente a presença de Deus em um ambiente de louvor e aprendizado.</p>
-        <ul class="culto-list">
-            <li><strong>Culto de Libertação</strong>: Sexta-Feira, 19h30</li>
+        <ul class="culto-list fade-in-element"> <li><strong>Culto de Libertação</strong>: Sexta-Feira, 19h30</li>
             <li><strong>Consagração</strong>: Sábado, 8h00</li>
             <li><strong>Culto de Louvor e Adoração</strong>: Domingo, 19h30</li>
             <li><strong>EDB</strong>: Domingo, 18h00</li>
@@ -88,8 +98,7 @@
     <section id="contato-form" class="section-padding fade-in-element">
         <h2 class="section-title-fixed">Envie-nos uma Mensagem</h2>
         <p class="contact-intro-form">Preencha o formulário abaixo e entraremos em contato com você o mais breve possível.</p>
-        <form class="contact-form">
-            <div class="form-group">
+        <form class="contact-form fade-in-element"> <div class="form-group">
                 <label for="nome">Nome Completo</label>
                 <input type="text" id="nome" name="nome" required placeholder="Seu nome completo">
             </div>
@@ -113,17 +122,14 @@
         </form>
     </section>
 
-    <script src="script.js"></script>
-
     <footer class="footer">
         <div class="footer-content-wrapper">
-            <div class="footer-column footer-logo-column">
-                <img src="logo.png" alt="Logo Missão Restaurar Rodapé" class="footer-logo">
+            <div class="footer-column footer-logo-column fade-in-element"> <img src="logo.png" alt="Logo Missão Restaurar Rodapé" class="footer-logo">
                 <p class="footer-copyright">
                     © <span id="currentYear"></span> Todos os Direitos Reservados a Missão Restaurar.
                 </p>
             </div>
-            <div class="footer-column footer-info-column">
+            <div class="footer-column footer-info-column fade-in-element"> <h3>Contato</h3>
                 <address class="footer-contact-details">
                     <p class="contact-label">Endereço:</p>
                     <p class="contact-value">Rua Eronildes Martins dos Santos, 686 - Coelho da Rocha - São João de Meriti - RJ</p>
@@ -132,14 +138,15 @@
                 </address>
             </div>
         </div>
-        <div class="footer-social-links">
-            <a href="https://facebook.com/suaigreja" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <div class="footer-social-links fade-in-element"> <a href="https://facebook.com/suaigreja" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
             <a href="https://instagram.com/suaigreja" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
             <a href="https://youtube.com/suaigreja" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
         </div>
     </footer>
+    
+    <script src="script.js"></script>
     <script>
-        // Script para atualizar o ano no rodapé
+        // Script para atualizar o ano no rodapé (mantido no HTML para simplicidade)
         document.getElementById('currentYear').textContent = new Date().getFullYear();
     </script>
 </body>
