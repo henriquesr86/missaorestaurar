@@ -1,0 +1,879 @@
+/* Estilos Gerais e Reset Básico */
+html {
+    scroll-behavior: smooth; /* Garante rolagem suave para todo o documento */
+}
+
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif; /* Fonte comum e legível */
+    background-color: #000; /* Cor de fundo padrão do body (preto) */
+    color: #fff; /* Cor do texto padrão para o fundo escuro */
+    line-height: 1.6; /* Espaçamento entre linhas para melhor leitura */
+    overflow-x: hidden; /* Previne rolagem horizontal indesejada */
+}
+
+/* --- Menu de Navegação Fixo --- */
+.navbar {
+    position: fixed; /* Fixa o menu na tela */
+    top: 0;
+    left: 0;
+    width: 100%; /* Ocupa 100% da largura */
+    background-color: rgba(255, 255, 255, 0.7); /* Branco com 70% de transparência */
+    padding: 15px 0;
+    z-index: 1000; /* Garante que o menu fique acima de todo o conteúdo */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3); /* Sombra sutil */
+    display: flex; /* Ativa Flexbox para alinhar conteúdo */
+    justify-content: center; /* Centraliza o conteúdo horizontalmente */
+}
+
+.navbar .content-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px; /* Largura máxima para o conteúdo do menu */
+    width: 100%;
+    padding: 0 20px; /* Padding lateral para o conteúdo */
+    box-sizing: border-box; /* Inclui padding na largura */
+}
+
+/* --- Logo no Menu --- */
+.logo-container {
+    height: 70px; /* Altura da logo */
+    flex-shrink: 0; /* Impede que a logo encolha */
+    margin-right: 30px; /* Espaço entre a logo e o menu */
+}
+
+.logo-container img {
+    height: 100%; /* A logo preenche a altura do container */
+    display: block; /* Remove espaçamento extra */
+}
+
+.navbar nav {
+    flex-grow: 1; /* Permite que o menu ocupe o espaço restante */
+    display: flex;
+    justify-content: flex-end; /* Alinha os itens à direita */
+}
+
+.navbar nav ul {
+    list-style: none; /* Remove marcadores */
+    margin: 0;
+    padding: 0;
+    display: flex; /* Alinha os itens lado a lado */
+}
+
+.navbar nav ul li {
+    margin: 0 25px; /* Espaçamento entre os itens */
+}
+
+.navbar nav ul li a {
+    color: #333; /* Cor do texto dos links */
+    text-decoration: none; /* Remove sublinhado */
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: color 0.3s ease-in-out; /* Transição suave na cor */
+}
+
+.navbar nav ul li a:hover {
+    color: #90EE90; /* Cor ao passar o mouse (verde claro) */
+}
+
+/* --- Seção HOME (Hero Section) --- */
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    background-image:
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 70%, rgba(0, 0, 0, 1) 100%),
+        url('https://folhagospel.com/wp-content/uploads/2025/02/jovens-adorando-a-deus-durante-culto.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Imagem fixa na HOME */
+    overflow: hidden;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.65); /* Camada preta com 65% de opacidade */
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 20px;
+    max-width: 95vw;
+    box-sizing: border-box;
+}
+
+.hero-content h1 {
+    font-size: 6vmin;
+    font-weight: bold;
+    margin: 0;
+    margin-bottom: 15px;
+    line-height: 1.2;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+    color: #fff;
+    background: -webkit-linear-gradient(90deg, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.9) 3%, rgba(255, 255, 255, 1) 5%, rgba(255, 255, 255, 1) 7%, rgba(255, 255, 255, 0.9) 9%, rgba(255, 255, 255, 0.7) 12%);
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.9) 3%, rgba(255, 255, 255, 1) 5%, rgba(255, 255, 255, 1) 7%, rgba(255, 255, 255, 0.9) 9%, rgba(255, 255, 255, 0.7) 12%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+    background-size: 800% 100%;
+    animation: shine 10s infinite linear 5s;
+}
+
+@keyframes shine {
+    0% { background-position: 100% 0; }
+    100% { background-position: -100% 0; }
+}
+
+.hero-content p {
+    font-size: 2.5vmin;
+    font-weight: 300;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+}
+
+/* --- Seção SOBRE --- */
+.section-about {
+    padding: 60px 0;
+    background-color: #0a0a0a; /* Fundo preto quase total */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    z-index: 1; /* Garante que ela cubra a imagem de fundo */
+}
+
+.about-title-container {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    margin-bottom: 40px;
+    position: relative;
+    height: 2.5em;
+    display: flex;
+    align-items: center;
+}
+
+.animated-title {
+    font-size: 3em;
+    font-weight: normal;
+    position: absolute;
+    animation: scrollText 120s linear infinite;
+    width: max-content;
+}
+
+.animated-title span.white-bold {
+    color: #fff;
+    font-weight: bold;
+}
+.animated-title span.light-gray {
+    color: #fff;
+    font-weight: normal;
+}
+.animated-title span.bullet {
+    color: #fff;
+    font-size: 0.5em;
+    vertical-align: middle;
+    margin: 0 0.5em;
+    display: inline-block;
+    line-height: 1;
+}
+
+@keyframes scrollText {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-50%); }
+}
+
+.about-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    max-width: 1200px;
+    width: 100%;
+    padding: 0 20px;
+    gap: 40px;
+}
+
+.about-text {
+    flex: 1;
+    text-align: left;
+    font-size: 1.1em;
+    padding-right: 20px;
+}
+
+.about-text p {
+    margin-bottom: 15px;
+}
+
+.about-image {
+    position: relative;
+    flex-shrink: 0;
+    width: 400px;
+    height: auto;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+.about-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to bottom,
+        rgba(10, 10, 10, 0) 0%,
+        rgba(10, 10, 10, 0.8) 80%,
+        rgba(10, 10, 10, 1) 100%
+    );
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* --- Estilos para Outras Seções (Cultos, Eventos, Contato) --- */
+.section-padding {
+    padding: 100px 20px;
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    color: #fff;
+}
+
+/* Seção de EVENTOS - Fundo Sólido Claro */
+.section-events-light {
+    background-color: #f8f8f8; /* Fundo branco/muito claro */
+    color: #333; /* Texto principal mais escuro */
+    background-image: none;
+    background-attachment: scroll;
+    position: relative;
+    z-index: 2;
+}
+
+/* Estilos gerais para parágrafos em seções de padding */
+.section-padding p {
+    max-width: 800px;
+    margin-bottom: 20px;
+    font-size: 1.1em;
+    color: #fff; /* Cor do texto padrão para as seções escuras */
+    position: relative;
+    z-index: 2;
+}
+
+/* Reajuste para a seção de eventos (fundo claro) */
+.section-events-light p {
+    color: #666; /* Texto em cinza médio para fundo claro */
+}
+
+
+.event-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1000px;
+    width: 100%;
+    margin-top: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.event-card {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid #eee;
+    transition: transform 0.3s ease;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.event-card h3 {
+    color: #333;
+    margin-top: 0;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.event-card p {
+    font-size: 0.95em;
+    margin-bottom: 5px;
+    color: #666;
+}
+
+/* Estilos específicos para a seção Cultos */
+#cultos {
+    background-color: #000; /* Fundo preto sólido */
+    background-image: none; /* Sem imagem de fundo */
+    background-attachment: scroll; /* Comportamento padrão de rolagem */
+}
+
+.culto-list {
+    list-style: none;
+    padding: 0;
+    font-size: 1.2em;
+    margin-top: 30px;
+    position: relative;
+    z-index: 2;
+}
+
+.culto-list li {
+    background-color: rgba(255, 255, 255, 0.05); /* Fundo com pouca transparência para os itens da lista */
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border-left: 5px solid #90EE90;
+    text-align: left;
+    max-width: 500px;
+    width: 100%;
+}
+
+.culto-list li strong {
+    color: #fff;
+}
+
+/* --- Seção CONTATO (FORMULÁRIO) --- */
+#contato-form {
+    background-image: url('https://folhagospel.com/wp-content/uploads/2025/02/jovens-adorando-a-deus-durante-culto.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Imagem fixa SOMENTE no contato */
+    position: relative;
+    z-index: 0;
+}
+
+/* Pseudo-elemento para a máscara de cor transparente no contato (mais escura) */
+#contato-form::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85); /* Máscara preta mais escura (85% de opacidade) */
+    z-index: -1;
+}
+
+.contact-intro-form {
+    color: #fff;
+    text-align: center;
+    max-width: 700px;
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 2;
+}
+
+.contact-form {
+    background-color: rgba(255, 255, 255, 0.05); /* Fundo branco com 5% de opacidade para o formulário */
+    padding: 40px;
+    border-radius: 10px;
+    max-width: 600px;
+    width: 100%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    text-align: left;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 2;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    background-color: transparent;
+    border: 1px solid #fff;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 1em;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #90EE90;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(144, 238, 144, 0.3);
+}
+
+.submit-button {
+    background-color: #90EE90;
+    color: #333;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 100%;
+}
+
+.submit-button:hover {
+    background-color: #7CCD7C;
+    transform: translateY(-2px);
+}
+
+/* --- Efeito Fade-In Subindo (geral) --- */
+.fade-in-element {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in-element.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- TÍTULOS DIFERENCIADOS --- */
+.section-title-fixed {
+    font-size: 2.8em;
+    margin-bottom: 40px;
+    color: #fff;
+    position: relative;
+    padding-bottom: 15px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+    z-index: 2; /* Garante que o título esteja acima da máscara */
+}
+
+.section-title-fixed span.bold-word {
+    font-weight: bold;
+    color: #fff;
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.section-title-fixed span.normal-word {
+    font-weight: normal;
+    color: #fff;
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.section-title-fixed span.divider-bullet {
+    color: #90EE90;
+    font-size: 0.8em;
+    vertical-align: middle;
+    margin: 0 10px;
+    display: inline-block;
+    line-height: 1;
+    text-shadow: 0 0 8px rgba(144, 238, 144, 0.7);
+}
+
+.section-title-fixed::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+    height: 2px;
+    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.5), transparent);
+    border-radius: 1px;
+}
+
+.section-title-fixed-dark {
+    font-size: 2.8em;
+    margin-bottom: 40px;
+    color: #333;
+    position: relative;
+    padding-bottom: 15px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+    z-index: 2; /* Garante que o título esteja acima da máscara */
+}
+
+.section-title-fixed-dark span.bold-word-dark {
+    font-weight: bold;
+    color: #333;
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.section-title-fixed-dark span.normal-word-dark {
+    font-weight: normal;
+    color: #666;
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.section-title-fixed-dark span.divider-bullet-dark {
+    color: #333;
+    font-size: 0.8em;
+    vertical-align: middle;
+    margin: 0 10px;
+    display: inline-block;
+    line-height: 1;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.section-title-fixed-dark::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+    height: 2px;
+    background: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.5), transparent);
+    border-radius: 1px;
+}
+
+/* --- Rodapé --- */
+.footer {
+    background-color: rgba(34, 34, 34, 0.9); /* Tom de cinza escuro com 90% de opacidade */
+    color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+    font-size: 0.9em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    background-image: none; /* Sem imagem de fundo */
+    background-attachment: scroll; /* Rolagem padrão */
+}
+
+.footer-content-wrapper {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    max-width: 1200px;
+    width: 100%;
+    gap: 40px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 2;
+}
+
+.footer-column {
+    flex: 1;
+    padding: 0 20px;
+    box-sizing: border-box;
+    min-width: 280px;
+}
+
+.footer-logo-column {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.footer-logo {
+    max-width: 200px;
+    height: auto;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.footer-copyright {
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0;
+}
+
+.footer-info-column {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.footer-contact-details p {
+    margin: 5px 0;
+    color: #fff;
+    font-size: 1em;
+}
+
+.footer-contact-details .contact-label {
+    font-weight: bold;
+    color: #90EE90;
+}
+
+.footer-contact-details a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-contact-details a:hover {
+    color: #90EE90;
+    text-decoration: underline;
+}
+
+.footer-social-links {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 20px;
+    margin-top: 20px;
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    width: 100%;
+    max-width: 400px;
+    position: relative;
+    z-index: 2;
+}
+
+.footer-social-links a {
+    color: #f00;
+    font-size: 2.2em;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.footer-social-links a:hover {
+    transform: scale(1.1);
+    color: #ff4d4d;
+}
+
+/* --- Efeitos de Degradê para transição suave entre as seções --- */
+
+/* Degradê ESPECÍFICO para a seção HERO (transparente EM CIMA para preto EMBAIXO) */
+.hero::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 180px; /* Altura do degradê, um pouco maior para uma transição mais longa */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, /* Transparente em cima */
+                                       rgba(0, 0, 0, 0.7) 70%,   /* Aumenta opacidade gradualmente */
+                                       rgba(0, 0, 0, 1) 100%);  /* Totalmente preto embaixo */
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Degradê para seções escuras (Sobre, Cultos, Contato) - transparente EM CIMA para preto EMBAIXO */
+.section-about::after,
+#cultos::after,
+#contato-form::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%,
+                                       rgba(0, 0, 0, 0.8) 80%,
+                                       rgba(0, 0, 0, 1) 100%);
+    z-index: 1;
+    pointer-events: none;
+}
+
+
+/* IMPORTANTE: Se você tinha 'margin-bottom' ou espaçamento similar em suas seções que causava quebras abruptas,
+   deve removê-los ou reduzi-los agora, pois o degradê lida com a transição visual. */
+
+
+/* Media Queries para Responsividade Geral */
+@media (max-width: 992px) {
+    .navbar .content-wrapper {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0 15px;
+    }
+
+    .logo-container {
+        height: 50px;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .navbar nav {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .about-content {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .about-text {
+        text-align: center;
+        padding-right: 0;
+    }
+
+    .about-image {
+        width: 80%;
+        max-width: 400px;
+    }
+    .about-image::before {
+        background: linear-gradient(
+            to bottom,
+            rgba(10, 10, 10, 0) 0%,
+            rgba(10, 10, 10, 0.8) 80%,
+            rgba(10, 10, 10, 1) 100%
+        );
+    }
+
+    .footer-content-wrapper {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .footer-column {
+        text-align: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    .footer-info-column {
+        align-items: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar nav ul li {
+        margin: 0 10px;
+    }
+
+    .section-title-fixed,
+    .section-title-fixed-dark {
+        font-size: 2em;
+        padding-bottom: 10px;
+        padding: 0 10px;
+        flex-wrap: wrap;
+    }
+    .section-title-fixed::after,
+    .section-title-fixed-dark::after {
+        width: 80%;
+    }
+    .section-title-fixed span.divider-bullet,
+    .section-title-fixed-dark span.divider-bullet-dark {
+        margin: 0 5px;
+    }
+
+    .section-padding h2 {
+        font-size: 2.2em;
+    }
+
+    .section-padding p {
+        font-size: 1em;
+    }
+
+    .event-grid {
+        grid-template-columns: 1fr;
+        padding: 0 15px;
+    }
+
+    .event-card {
+        padding: 20px;
+    }
+
+    .culto-list li {
+        width: 90%;
+    }
+
+    .animated-title {
+        font-size: 2.2em;
+        animation-duration: 40s;
+    }
+
+    .contact-form {
+        padding: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-container {
+        height: 40px;
+        margin-bottom: 8px;
+    }
+
+    .navbar nav ul li {
+        margin: 8px 0;
+    }
+
+    .section-padding {
+        padding: 60px 15px;
+    }
+
+    .section-title-fixed,
+    .section-title-fixed-dark {
+        font-size: 1.8em;
+    }
+
+    .section-padding h2 {
+        font-size: 1.8em;
+    }
+
+    .animated-title {
+        font-size: 1.8em;
+        animation-duration: 30s;
+    }
+
+    .footer-logo {
+        max-width: 150px;
+    }
+    .footer-social-links {
+        gap: 15px;
+        font-size: 2em;
+    }
+}
